@@ -8,7 +8,6 @@ RM := rm -f
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/avr-libc/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -48,8 +47,13 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
 libRadioHead_Core.lss \
+<<<<<<< HEAD
+=======
+libRadioHead_Core.lss \
+>>>>>>> branch 'master' of https://github.com/fransb/RadioHead_Core
 
 SIZEDUMMY += \
+sizedummy \
 sizedummy \
 
 
