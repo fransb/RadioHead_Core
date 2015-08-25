@@ -47,38 +47,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-libarduino_core.lss \
+libRadioHead_Core.lss \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: libarduino_core.a secondary-outputs
+all: libRadioHead_Core.a secondary-outputs
 
 # Tool invocations
-libarduino_core.a: $(OBJS)
+libRadioHead_Core.a: $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR Archiver'
-	avr-ar -r  "libarduino_core.a" $(OBJS) $(LIBS)
+	avr-ar -r  "libRadioHead_Core.a" $(OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-libarduino_core.lss: libarduino_core.a
+libRadioHead_Core.lss: libRadioHead_Core.a
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S libarduino_core.a  >"libarduino_core.lss"
+	-avr-objdump -h -S libRadioHead_Core.a  >"libRadioHead_Core.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: libarduino_core.a
+sizedummy: libRadioHead_Core.a
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega328p libarduino_core.a
+	-avr-size --format=avr --mcu=atmega328p libRadioHead_Core.a
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libarduino_core.a
+	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libRadioHead_Core.a
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(SIZEDUMMY)

@@ -1,3 +1,3 @@
-src/new.d: ../src/new.cpp /home/frans/workspace/arduino_core/src/new.h
+src/new.d: ../src/new.cpp /home/frans/arduino/RadioHead_Core/src/new.h
 
-/home/frans/workspace/arduino_core/src/new.h:
+/home/frans/arduino/RadioHead_Core/src/new.h:

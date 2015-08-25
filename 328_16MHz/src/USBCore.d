@@ -1,7 +1,7 @@
 src/USBCore.d: ../src/USBCore.cpp ../src/Platform.h ../src/Arduino.h \
  ../src/binary.h ../src/WCharacter.h ../src/WString.h \
  ../src/HardwareSerial.h ../src/Stream.h ../src/Print.h \
- ../src/Printable.h /home/frans/workspace/arduino_core/src/new.h \
+ ../src/Printable.h /home/frans/arduino/RadioHead_Core/src/new.h \
  ../src/pins_arduino.h ../src/USBAPI.h ../src/USBDesc.h
 
 ../src/Platform.h:
@@ -22,7 +22,7 @@ src/USBCore.d: ../src/USBCore.cpp ../src/Platform.h ../src/Arduino.h \
 
 ../src/Printable.h:
 
-/home/frans/workspace/arduino_core/src/new.h:
+/home/frans/arduino/RadioHead_Core/src/new.h:
 
 ../src/pins_arduino.h:
 
