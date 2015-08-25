@@ -4,82 +4,77 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/CDC.cpp \
-../src/HID.cpp \
-../src/HardwareSerial.cpp \
-../src/IPAddress.cpp \
-../src/Print.cpp \
-../src/Stream.cpp \
-../src/Tone.cpp \
-../src/USBCore.cpp \
-../src/WMath.cpp \
-../src/WString.cpp \
-../src/main.cpp \
-../src/new.cpp 
-
-C_SRCS += \
-../src/WInterrupts.c \
-../src/wiring.c \
-../src/wiring_analog.c \
-../src/wiring_digital.c \
-../src/wiring_pulse.c \
-../src/wiring_shift.c 
+../src/RHCRC.cpp \
+../src/RHDatagram.cpp \
+../src/RHGenericDriver.cpp \
+../src/RHGenericSPI.cpp \
+../src/RHHardwareSPI.cpp \
+../src/RHMesh.cpp \
+../src/RHNRFSPIDriver.cpp \
+../src/RHReliableDatagram.cpp \
+../src/RHRouter.cpp \
+../src/RHSPIDriver.cpp \
+../src/RHSoftwareSPI.cpp \
+../src/RH_ASK.cpp \
+../src/RH_NRF24.cpp \
+../src/RH_NRF905.cpp \
+../src/RH_RF22.cpp \
+../src/RH_RF24.cpp \
+../src/RH_RF69.cpp \
+../src/RH_RF95.cpp \
+../src/RH_Serial.cpp \
+../src/RH_TCP.cpp 
 
 OBJS += \
-./src/CDC.o \
-./src/HID.o \
-./src/HardwareSerial.o \
-./src/IPAddress.o \
-./src/Print.o \
-./src/Stream.o \
-./src/Tone.o \
-./src/USBCore.o \
-./src/WInterrupts.o \
-./src/WMath.o \
-./src/WString.o \
-./src/main.o \
-./src/new.o \
-./src/wiring.o \
-./src/wiring_analog.o \
-./src/wiring_digital.o \
-./src/wiring_pulse.o \
-./src/wiring_shift.o 
-
-C_DEPS += \
-./src/WInterrupts.d \
-./src/wiring.d \
-./src/wiring_analog.d \
-./src/wiring_digital.d \
-./src/wiring_pulse.d \
-./src/wiring_shift.d 
+./src/RHCRC.o \
+./src/RHDatagram.o \
+./src/RHGenericDriver.o \
+./src/RHGenericSPI.o \
+./src/RHHardwareSPI.o \
+./src/RHMesh.o \
+./src/RHNRFSPIDriver.o \
+./src/RHReliableDatagram.o \
+./src/RHRouter.o \
+./src/RHSPIDriver.o \
+./src/RHSoftwareSPI.o \
+./src/RH_ASK.o \
+./src/RH_NRF24.o \
+./src/RH_NRF905.o \
+./src/RH_RF22.o \
+./src/RH_RF24.o \
+./src/RH_RF69.o \
+./src/RH_RF95.o \
+./src/RH_Serial.o \
+./src/RH_TCP.o 
 
 CPP_DEPS += \
-./src/CDC.d \
-./src/HID.d \
-./src/HardwareSerial.d \
-./src/IPAddress.d \
-./src/Print.d \
-./src/Stream.d \
-./src/Tone.d \
-./src/USBCore.d \
-./src/WMath.d \
-./src/WString.d \
-./src/main.d \
-./src/new.d 
+./src/RHCRC.d \
+./src/RHDatagram.d \
+./src/RHGenericDriver.d \
+./src/RHGenericSPI.d \
+./src/RHHardwareSPI.d \
+./src/RHMesh.d \
+./src/RHNRFSPIDriver.d \
+./src/RHReliableDatagram.d \
+./src/RHRouter.d \
+./src/RHSPIDriver.d \
+./src/RHSoftwareSPI.d \
+./src/RH_ASK.d \
+./src/RH_NRF24.d \
+./src/RH_NRF905.d \
+./src/RH_RF22.d \
+./src/RH_RF24.d \
+./src/RH_RF69.d \
+./src/RH_RF95.d \
+./src/RH_Serial.d \
+./src/RH_TCP.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: AVR C++ Compiler'
-	avr-g++ -I"/home/frans/workspace/arduino_core/src" -Wall -g2 -gstabs -Os -ffunction-sections -fdata-sections -fno-exceptions -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-src/%.o: ../src/%.c
-	@echo 'Building file: $<'
-	@echo 'Invoking: AVR Compiler'
-	avr-gcc -I"/home/frans/workspace/arduino_core/src" -Wall -g2 -gstabs -Os -ffunction-sections -fdata-sections -ffunction-sections -fdata-sections -std=gnu99 -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
+	avr-g++ -I"/home/frans/workspace/RadioHead_Core/src" -I"/home/frans/workspace/arduino_core/src" -I"/home/frans/workspace/Spi_core/src" -DARDUINO=101 -Wall -g2 -gstabs -Os -ffunction-sections -fdata-sections -fno-exceptions -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
